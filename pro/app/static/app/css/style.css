@@ -1,0 +1,322 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}.nav{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(180, 8, 8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 12px;
+}
+.n1 a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 0.7em;
+}
+.n2{
+    background-color: white;
+    width: 350px;
+    height: 30px;
+}
+.n2 input{
+    width: 270px;
+    height: 30px;
+    padding: 10px;
+    color: gray;
+    border: 1px solid white;
+}
+.n2 i{
+    background-color: white;
+    color: black;
+margin-left: 1em
+}
+.n2 button{
+    border: none;
+    background-color: white;
+}
+.n3{
+    width: 420px;
+    display: flex;
+}
+.n3 a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 0.6em;
+    font-size: 1.1em;
+}
+.n1 a:hover{
+    color: rgb(247, 247, 111);
+}
+.n3 a:hover{
+    color: rgb(247, 247, 111);
+}
+.n3 ul{
+    margin-left: -2em;
+    font-weight: bold;
+}
+.n3 ul li{
+    width: 150px;
+    height: 100px;
+    padding: 20px 0px;
+    height: 30px;
+    display: none;
+    position: relative;
+}
+.n3 ul li a{
+    color: black;
+    width: 150px;
+}
+.n3 ul:hover li{
+    display: block;
+    position: relative;
+}
+.n3 ul li:hover a{
+    color: blue;
+}
+.mid{
+    font-family:sans-serif ;
+    height: 100px;
+    width: 80%;
+    background-color:transparent;
+    box-shadow: 15px 15px 75px rgb(99, 99, 99);
+   border-radius: 15px;
+    padding-top: 2em;
+    margin-top: 8em;
+   
+}
+.women {
+    margin-top: 5%;
+    display: flex;    
+    /* margin-left: 1.5em; */
+}
+.women img{
+    height: 380px;
+    width: 250px;
+    position: absolute;
+    margin-left: 0.5em;
+    padding-left: 0.5em;
+}
+.women h1{
+    position: relative;
+    background-color: rgb(248, 248, 157);
+    opacity: 0.6;
+    width: 250px;
+    margin-top: 11em;
+    font-size: 30px;
+    left: 0.5em;
+    margin-right: 0.5em;
+}
+.women a{
+    text-decoration: none;
+    color: black;
+}
+.men {
+    margin-top: 35%;
+    display: flex;
+    position: absolute;
+    /* margin-left: 1.5em; */
+}
+.men img{
+    height: 380px;
+    width: 250px;
+    margin-left: 0.5em;
+}
+.men h1{
+    position: relative;
+    background-color: aquamarine;
+    opacity: 0.6;
+    width: 250px;
+    margin-top: 11em;
+    left: 0.5em;
+    margin-right: 0.5em;
+}
+.daily {
+    margin-top: 70%;
+    display: flex;
+    position: absolute;
+    /* margin-left: 1.5em; */
+}
+.daily img{
+    height: 380px;
+    width: 250px;
+    margin-left: 0.5em;
+}
+.daily h1{
+    background-color: lightblue;
+    opacity: 0.6;
+    width: 250px;
+    margin-top: 11em;
+    left: 0.5em;
+    margin-right: 0.5em;
+}
+.form{
+    height: 480px;
+    width: 400px;
+    background-color: rgb(247, 241, 241);
+    box-shadow: 15px 15px 55px gainsboro;
+    margin-top: 2em;
+    line-height: 15px;
+}
+/* .img1{
+    top: 3.1em;
+    left: 0;
+    position: absolute;
+    height: 600px;
+    width: 1350px;
+} */
+.btn1{
+    padding: 1em;
+    width: 250px;
+    background-color: rgb(236, 90, 139);
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.form1{
+    height: 250px;
+    width: 400px;
+    background-color: rgb(247, 241, 241);
+    box-shadow: 15px 15px 55px gainsboro;
+    line-height: 15px;
+}
+.sbtn{
+    border: 1px solid black;
+    height: 48px;
+    width: 110px;
+    background-color: beige;
+}
+.sbtn1{
+    border: 1px solid black;
+    height: 48px;
+    width: 665px;
+    background-color: rgb(205, 166, 179);
+    font-weight: bold;
+}
+.fbtn{
+    border: 1px solid black;
+    height: 48px;
+    width: 200px;
+    font-weight: 600; 
+    background-color: brown;
+    color: white;
+}
+.cart{
+    height: 100px;
+        width: 100px;
+        animation: bounce 5000ms infinite;
+}
+@keyframes bounce {
+    from {
+       transform: translateX(0%);
+    }
+    to {
+      transform: translateX(75%);
+    }
+  }
+  .images img {
+    position: absolute;
+    top: 3.6em;
+  }
+  #main1{
+    position: relative;
+    height: 220px;
+    margin-top: -3em;
+    margin-left: 50em;
+    box-shadow: 15px 15px 60px rgb(100, 99, 99);
+    border-radius: 50%;
+  }
+  #main2{
+    position: relative;
+    height: 220px;
+    margin-top: 5em;
+    margin-left: 5em;
+    box-shadow: 15px 15px 60px rgb(100, 99, 99);
+    border-radius: 50%;
+  }
+  #shop{
+    position: relative;
+    width: 120px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid black;
+    font-weight: bold;
+    border-radius: 15px;
+    left: 1em;
+    top: 2.5em;
+  }
+  #shop a{
+    color: black;
+    text-decoration: none;
+  }
+  #shop:hover{
+    background-color: black;
+  }
+  #shop:hover a{
+    color: white;
+  }
+
+   .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .center .star{
+    height: 150px;
+    width: 500px;
+    text-align: center;
+    margin-left: 40em;
+  }
+  .star label{
+    font-size: 30px;
+    color: lightslategray;
+    margin-top: 9.5em;
+  }
+  
+  .star input:checked~label{
+    color: gold;
+    text-shadow: 1px 1px #c60;
+  }
+  .star:not(:checked) > label:hover,
+  .star:not(:checked) > label:hover ~ label{
+    color: gold;
+  }
+  .star input{
+    display: none;
+  }
+  .star .result{
+    position: absolute;
+    left: 50%;
+    margin-top: 16.4em;
+    margin-left: 17em;
+    font-size: 20px;
+    font-weight: bold;
+    transform: translate(-50%);
+    color: gold;
+    font-family: 'poppins', sans-serif;
+  }
+ .star input:checked ~ .result::before{
+    display: block;
+  }
+  .star #five:checked ~ .result:before{
+    content: "I Love It 😍";
+  }
+    .star #four:checked ~ .result:before{
+    content: "I Like It ❤️";
+  }
+  .star #three:checked ~ .result:before{
+    content: "I'ts Good 👍🏻";
+  }
+  .star #two:checked ~ .result:before{
+    content: "I Don't Like It 👎🏻";
+  }
+  .star #one:checked ~ .result:before{
+    content: "Poor 😡";
+  }

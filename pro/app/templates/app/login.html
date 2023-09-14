@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block one %}
+<center>
+        <img src="{% static 'app/images/d.png' %}" alt="" style="width: 400px; height: 150px; margin-top: 2em;">
+        
+<form action="{% url 'login' %}" method="post" class="form1" >
+    {% csrf_token %}
+    
+    {% for i in messages %}
+    <div class="list-group-item list-group-item-action" style="width: 400px; font-weight: bold; background-color: rgb(236, 90, 139); color: white;" >{{i}}</div>
+    {% endfor%}
+
+    
+    {% for i in fm %}
+    <br><br>
+    {{i.label_tag}} {{i}}
+    {{i.errors|striptags}}               
+    <br>
+    
+    {% endfor%}
+    <br><br>
+    <input type="submit" value="LOGIN" class="btn1">
+    </form>
+    
+</center>
+{% endblock one %}

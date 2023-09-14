@@ -1,0 +1,41 @@
+{% extends 'app/base.html' %}
+
+{% block one %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col">            
+            <img src="{{pro.image.url}}" alt="" style="height: 550px;" class="img-fluid img-thumbnail">
+        </div> 
+        <div class="col-sm-5 offset-sm-1">
+            <h5 class="mt-5"></h5>
+                <div class="center">
+                    <div class="star">
+                        <input type="radio" id="five" name="rate" value="5"><label for="five" class='bx bxs-star'></label>
+                        <input type="radio" id="four" name="rate" value="4"><label for="four" class='bx bxs-star'></label>
+                        <input type="radio" id="three" name="rate" value="3"><label for="three" class='bx bxs-star'></label>
+                        <input type="radio" id="two" name="rate" value="2"><label for="two" class='bx bxs-star'></label>
+                        <input type="radio" id="one" name="rate" value="1"><label for="one" class='bx bxs-star'></label>
+                        <span class="result" ></span>
+                    </div>
+                        </div>
+            <h2>{{pro.name}}</h2>
+            <hr>
+            <p>{{pro.description}}</p> <br>
+            <h4>Rs. {{pro.discountedprice}}<small class="fw-light text-decoration-line-through">
+                Rs. {{pro.sellingprice}} </small></h4> <br>
+
+                <form action="{% url 'addtocart' %}" class="d-inline">
+                    {% csrf_token %}
+                    <input type="hidden" name="pro_id" id="pro_id" value="{{pro.id}}">
+                    <button class="btn btn-primary shadow px-5" type="submit">add to cart</button>
+                </form>
+                                      
+
+
+                <a href="{% url 'item_payment' %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
+               
+           
+        </div>
+    </div>
+</div>
+{% endblock %}

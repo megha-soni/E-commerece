@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% block one %}
+
+
+{% if s %}
+<div class="container my-5">
+    <div class="col">
+        <div class="row">
+    {% for s in s %}
+            <div class="col my-5 ">
+                <a href="{% url 'productdetail' s.id %}"><img src="{{s.image.url}}" alt="" height="400" width="300"></a> <br>
+            
+            <font color="red" style="font-weight: bold;">{{s}} </font>        <br>
+            SELLING PRICE : {{s.sellingprice}} <br> 
+            ON DISCOUNT : {{s.discountedprice}} <br> 
+            INSTOCK:-{{s.quantity}} 
+        </div>
+    {% endfor %}
+    
+</div>
+</div>
+</div>
+<!-- </div>
+{% elif sh %}
+<div class="row">
+{% for h in sh %}
+<div class="col-6">
+    <img src="{{h.image.url}}" alt="" height="150"><br>
+{{h}} <br>
+QUANTITY:-{{h.quantity}}
+</div>
+{% endfor %} -->
+
+{% else %}
+<center><h1 style="color: red;">NO MATCH FOUND</h1></center>
+{% endif %}
+
+
+{% endblock one %}

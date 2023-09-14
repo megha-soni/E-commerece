@@ -1,0 +1,47 @@
+{% extends 'app/base.html' %}
+{% block one %}
+
+
+<div class="container my-5">
+    <div class="col">
+        <div class="row">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="lower limit" name="mx">
+                <input type="text" placeholder="upper limit" name="mn">
+                <input type="submit" value="GO FILTER IT">
+            </form>
+            {% if data %}
+            {% for i in data %}
+    <div class="col my-5">
+        <a href="{% url 'productdetail' i.id %}"><img src="{{i.image.url}}" alt="" height="400" width="300"></a>
+    <div>
+    PRODUCT NAME : {{i.name}} <br>
+    IN STOCK : {{i.quantity}} <br>
+    SELLING PRICE : {{i.sellingprice}} <br> 
+    <p style="color: red;">ON DISCOUNT : {{i.discountedprice}} </p>
+    <!-- <form action="" method="post">
+        {% csrf_token %}
+        <input type="number" value="" name="req_quan">
+        <input type="hidden" name="instock" value="{{i.quantity}}">
+        <input type="hidden" name="id_product" value="{{i.id}}">
+        <input type="submit" value="ADD TO CART">
+        {% if id == i.id %} {{msg1}} {% endif %}
+    </form> -->
+    </div>
+    </div> 
+    {% endfor %}
+    {% else %}
+    <br><br>
+    <h1 style="color: red;">OOPS !! We Have Nothing That Matches Your Query.</h1>
+    <br>
+    <a href="{% url 'filter' %}" style="text-decoration: none;"><button class="fbtn">Please Try Again</button> </a>
+    {% endif %}
+</div>
+</div>
+</div>
+
+
+
+
+{% endblock one %}

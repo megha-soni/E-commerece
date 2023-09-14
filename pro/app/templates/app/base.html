@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}">
+    
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+
+    <!-- navbar start -->
+    <nav class="nav">
+        <div class="n1">
+        <a href="{% url 'men' %}">Men</a>
+        <a href="{% url 'women' %}">Women</a>
+        <a href="{% url 'watch' %}">Watches</a>
+        <a href="{% url 'candle' %}">Candles</a>
+        <a href="{% url 'sunglass' %}">Sunglasses</a>
+    </div>
+    
+      <div class="n2">
+        <form action="{% url 'search' %}" method="post">
+          {% csrf_token %}
+        <i class='bx bx-search-alt-2' ></i><input type="search" placeholder="Search For Products And Brands" name="sear">
+        <button><i class='bx bx-right-arrow-alt'></i></button>
+      </form>
+    </div>
+    <div class="n3">  
+      <i class='bx bxs-briefcase' ><a href="{% url 'showcart' %}">Cart</a></i>        
+      <i class='bx bxs-lock'><a href="{% url 'login' %}">Login</a></i>
+      <i class='bx bxs-user'><a href="{% url 'signup' %}">Regestration</a></i>
+        <ul type="none">YOU
+          <li><a href="#">Profile</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+          <li><a href="{% url 'changepwd' %}">Password Reset</a></li>
+        </ul>
+        
+        <!-- <select name="you" id="" value="you" style="background-color: transparent; border: none; font-weight: bold; color: white; margin-top: -1.5em;">
+          <option value=""  style="color: black;">Profile</option>
+          <option value="" style="color: black;">Logout</option>
+          <a href="{% url 'changepwd' %}"><option value="" style="color: black;">Change Password</option></a>
+          <option value="" selected disabled style="color: gray;">You</option>
+         
+        </select> -->
+        
+    </div>
+    </nav>
+    <!-- navbar ended -->
+    {% block one %}
+
+      <div class="images">
+        <img src="{% static 'app/images/main3.png' %}" alt="" class="main">
+        
+        <img src="{% static 'app/images/main4.png' %}" alt="" id="main1">
+          <img src="{% static 'app/images/main2.png' %}" alt="" id="main2">
+          <button id="shop"><a href="{% url 'dress' %}"> Shop Now</a></button>
+       </div>
+          
+        
+      
+
+
+    <!-- mid section -->
+    <center><div class="mid">
+      <h1>FLAT <font color="red">300 RS/-</font> OFF ON YOUR FIRST PURCHASE</h1>
+    </div></center>
+    <!-- womens div -->
+    
+    <div class="women">
+      <div class="w1">
+        <img src="{% static 'app/images/w1.png' %}" alt="">
+        <center><h1><a href="{% url 'dress' %}">Dresses & Tops</a></h1></center>
+      </div>
+      <div class="w1">
+        <img src="{% static 'app/images/w2.png' %}" alt="">
+        <center><h1><a href="{% url 'jeans' %}">Jeans</a></h1></center>
+      </div>
+      <div class="w1">
+        <img src="{% static 'app/images/w3.png' %}" alt="">
+        <center><h1><a href="#">Ethnic Wear</a></h1></center>
+      </div>
+      <div class="w1">
+        <img src="{% static 'app/images/w4.png' %}" alt="">
+        <center><h1><a href="{% url 'jacket' %}">Jackets</a></h1></center>
+      </div>
+      <div class="w1">
+        <img src="{% static 'app/images/w5.png' %}" alt="">
+        <center><h1><a href="#">Casuals</a></h1></center>
+      </div>
+       
+    <!-- mens div -->
+    <div class="men">
+      <div class="m1">
+        <img src="{% static 'app/images/m5.png' %}" alt="">
+        <center><h1><a href="{% url 'shirt' %}">Shirts</a></h1></center>
+      </div>
+      <div class="m1">
+        <img src="{% static 'app/images/m4.png' %}" alt="">
+        <center><h1><a href="#">Casuals</a></h1></center>
+      </div>
+      <div class="m1">
+        <img src="{% static 'app/images/m1.png' %}" alt="">
+        <center><h1><a href="{% url 'tee' %}">Tees</a></h1></center>
+      </div>
+      <div class="m1">
+        <img src="{% static 'app/images/m2.png' %}" alt="">
+        <center><h1><a href="#">Hoodies</a></h1></center>
+      </div>
+      <div class="m1">
+        <img src="{% static 'app/images/m3.png' %}" alt="">
+        <center><h1><a href="#">Jackets</a></h1></center>
+      </div>
+    </div>
+
+
+
+    <!-- daily div -->
+    <div class="daily">
+      <div class="d1">
+        <img src="{% static 'app/images/s1.png' %}" alt="">
+        <center><h1><a href="#">Shampoos</a></h1></center>
+      </div>
+      <div class="d1">
+        <img src="{% static 'app/images/s2.png' %}" alt="">
+        <center><h1><a href="#">Oils</a></h1></center>
+      </div>
+      <div class="d1">
+        <img src="{% static 'app/images/s3.png' %}" alt="">
+        <center><h1><a href="#">Cleaners</a></h1></center>
+      </div>
+      <div class="d1">
+        <img src="{% static 'app/images/s4.png' %}" alt="">
+        <center><h1><a href="#">Daily Needs</a></h1></center>
+      </div>
+      <div class="d1">
+        <img src="{% static 'app/images/s5.png' %}" alt="">
+        <center><h1><a href="#">Utensils</a></h1></center>
+      </div>
+    </div>
+    {% endblock one %}
+    <script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'app/js/all.min.js' %}"></script>
+    <script src="{% static 'app/js/jquery.js' %}"></script>
+    <script src="{% static 'app/js/popper.js' %}"></script>
+</body>
+</html>

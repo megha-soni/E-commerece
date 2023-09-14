@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block one%}
+<center>
+    <!-- <img src="{% static 'app/images/pink.png' %}" alt="" class="img1"> -->
+    
+<form action="{% url 'signup' %}" method="post" class="form" >
+    {% csrf_token %}
+    {% for i in messages %}
+<div class="list-group-item list-group-item-action" style="width: 400px; font-weight: bold; background-color: rgb(236, 90, 139); color: white;" >{{i}}</div>
+{% endfor%}
+    {% for i in fm %}
+    <br><br>
+    {{i.label}}
+    {{i.errors|striptags}}               
+    <br>
+    {{i}}
+    {% endfor%}
+    <br><br>
+    <input type="submit" value="REGESTRATION" class="btn1"><br><br>
+    <p style="color: red; font-weight: bold;">Already Have An Account? <a href="{% url 'login' %}">Log In</a></p>
+</form>
+
+
+</center>
+{% endblock one %}

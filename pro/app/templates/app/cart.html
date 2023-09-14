@@ -1,0 +1,77 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block one %}
+<div class="container my-5">
+    <div class="row">
+        {% if cart %}
+        <h1 class="text-center mb-5">Shopping Cart <img src="{% static 'app/images/cart.png' %}" alt="" height="100"></h1>
+       
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-body">
+                  
+                    {% for c in cart %}
+                    <div class="row">
+                    
+                    <div class="col-sm-3 text-center align-self-center">
+                        <img src="{{c.product.image.url}}" alt="" class="img-fluid img-thumbnail shadow-sm" height="150"
+                            width="150">
+                    </div>
+                    <div class="col-sm-9">
+                        <div>
+                            <h5>{{c.product.name}}</h5>
+                            <p class="mb-2 text-muuted small">{{c.product.description}}</p>
+                            <div class="my-3">
+                                <label for="quantity">Quantity : </label>
+                                <form action="" method="post">
+                                    {% csrf_token %}
+                                   <!-- <input type="hidden" id="ProductAmount" name="ids" value="{{c.product.discountedprice}}"> -->
+                                   <input type="number" name="change" id="change" value="">
+                                   <input type="submit" value="add">
+                                </form>   
+                                     
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="{% url 'remove' c.id %}" class="remove-cart btn btn-sm btn-secondary mr-3"
+                                    >Remove Item</a>
+                                <p class="mb-0"><span><strong>Rs. {{c.product.discountedprice}}</strong></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="text-muted">
+                {% endfor %}
+            </div>
+        </div>
+    
+    </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>The Total Amount Of</h3>
+                    <ul>
+                        <li class="list-group-item d-flex justify-content-between align-self-center border-0 px-0 pb-0">
+                            Amount <span>{{amount}}</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-self-center  px-0 ">
+                            Shipping<span>Rs. 70.00</span></li>
+                        <li class="list-group-item d-flex justify-content-between align-self-center border-0 px-0 mb-3">
+                            <div>
+                                <strong>Total</strong> <small>(Including GST)</small>
+                            </div>
+                            <span id="totalamount"><strong>Rs. {{totalamount}}</strong></span>
+                        </li>
+                    </ul>
+
+
+                    <div class="d-grid"><a href="{% url 'item_payment' %}" class=" btn btn-primary">Place Order</a></div>
+                    
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <h1 class="text-center mb-5">Cart Is Empty</h1>
+        <div class="cart"><img src="{% static 'app/images/cart.png' %}" alt=""></div>
+        {% endif %}
+    </div>
+</div>
+{% endblock one %}
